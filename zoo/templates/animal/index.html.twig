@@ -8,9 +8,13 @@
 	<ul>
 		{% for animal in animals %}
 			<li>
-				{{ animal.name }}
-				-
-				{{ animal.type }}
+				<a href="{{ path('app_animal_show', {'id': animal.id}) }}">
+					{{ animal.name }}
+					-
+					{{ animal.type }}
+				</a>
+				<a href="{{ path('app_animal_edit', {'id': animal.id}) }}">Modifier</a>
+				<a href="{{ path('app_animal_delete', {'id': animal.id}) }}">Supprimer</a>
 			</li>
 		{% endfor %}
 	</ul>

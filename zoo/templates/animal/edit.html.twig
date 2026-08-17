@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	{{ animal.name }}
+{% endblock %}
+
+{% block body %}
+	<h1>Modification d'un nouvel animal</h1>
+	{{ form_start(form) }}
+	{{ form_widget(form) }}
+	<button>Sauvegarder</button>
+	{{ form_end(form) }}
+{% endblock %}
