@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[Route('/team')]
 final class TeamController extends AbstractController
@@ -22,6 +23,7 @@ final class TeamController extends AbstractController
         ]);
     }
 
+    #[IsGranted("ROLE_USER")]
     #[Route('/new', name: 'app_team_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -50,6 +52,7 @@ final class TeamController extends AbstractController
         ]);
     }
 
+    #[IsGranted("ROLE_USER")]
     #[Route('/{id}/edit', name: 'app_team_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Team $team, EntityManagerInterface $entityManager): Response
     {
@@ -68,6 +71,7 @@ final class TeamController extends AbstractController
         ]);
     }
 
+    #[IsGranted("ROLE_ADMIN")]
     #[Route('/{id}', name: 'app_team_delete', methods: ['POST'])]
     public function delete(Request $request, Team $team, EntityManagerInterface $entityManager): Response
     {
