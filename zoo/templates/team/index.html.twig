@@ -10,7 +10,6 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>City</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -19,7 +18,6 @@
             <tr>
                 <td>{{ team.id }}</td>
                 <td>{{ team.name }}</td>
-                <td>{{ team.city }}</td>
                 <td>
                     <a href="{{ path('app_team_show', {'id': team.id}) }}">show</a>
                     <a href="{{ path('app_team_edit', {'id': team.id}) }}">edit</a>
@@ -27,7 +25,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="3">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
