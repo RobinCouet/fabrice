@@ -1,4 +1,20 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+<div>
+	{{ form_label(form.name) }}
+	{{ form_widget(form.name) }}
+</div>
+<div>
+	{{ form_label(form.age) }}
+	{{ form_widget(form.age) }}
+</div>
+<div>
+	{{ form_label(form.birthdate) }}
+	{{ form_widget(form.birthdate) }}
+</div>
+<div>
+	{{ form_label(form.team) }}
+	{{ form_widget(form.team) }}
+</div>
+
+<button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
